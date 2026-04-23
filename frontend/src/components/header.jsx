@@ -22,7 +22,7 @@ export default function Header() {
 								onClick={() => {
 									navigate("/");
 								}}
-								src="/logo.png"
+								src="/newLogo.png"
 								alt="Logo"
 							/>
 						</div>
@@ -68,7 +68,7 @@ export default function Header() {
 				onClick={() => {
 					navigate("/");
 				}}
-				src="/logo.png"
+				src="/newLogo.png"
 				alt="Logo"
 			/>
 			<GiHamburgerMenu className="text-white text-4xl absolute md:hidden left-[40px]" onClick={

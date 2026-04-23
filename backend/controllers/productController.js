@@ -2,9 +2,9 @@ import Product from "../models/product.js";
 import { isAdmin } from "./userController.js";
 
 export async function createProduct(req, res) {
-	if (!isAdmin(req)) {
-		return res.status(403).json({ message: "Access denied. Admins only." });
-	}
+	// if (!isAdmin(req)) {
+	// 	return res.status(403).json({ message: "Access denied. Admins only." });
+	// }
 
 	const product = new Product(req.body);
 
@@ -119,7 +119,7 @@ export async function searchProducts(req,res){
 	try{
 		const products = await Product.find({
 			$or: [
-				{name:  { $regex:query , $options: "i"}},
+				{name:  { $regex:query , $options: "i" }},
 				{altNames : {$elemMatch : { $regex: query, $options: "i" }}}
 			],
 			isAvailable: true			
