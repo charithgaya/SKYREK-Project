@@ -6,7 +6,7 @@ import Loader from "../components/loader";
 export default function HomePage(){
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(true);
-
+    
     useEffect(() => {
         API.get("/products")
             .then((response) => {

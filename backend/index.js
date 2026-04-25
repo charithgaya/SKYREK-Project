@@ -51,9 +51,8 @@ mongoose.connect(connectionString)
 .then(()=>{
     console.log("Connected to MongoDB");
     app.listen(process.env.PORT || 5000, ()=>{
-    console.log("server started");
-   }
-)
+        console.log("server started");
+    });
 })
 .catch(
     (err)=>{

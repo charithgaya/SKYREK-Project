@@ -10,7 +10,7 @@ export default function LoginPage() {
     const navigate = useNavigate()
     const googleLogin = useGoogleLogin({
         onSuccess: (response)=>{
-            axios.post(import.meta.env.VITE_BACKEND_URL+"/api/users/google-login",{
+            axios.post(import.meta.env.VITE_API_URL+"/api/users/google-login",{
                 token : response.access_token
             }).then(
                 (response)=>{
@@ -33,7 +33,7 @@ export default function LoginPage() {
 
     function login(){
         console.log(email, password)
-        axios.post(import.meta.env.VITE_BACKEND_URL+"/api/users/login",{
+        axios.post(import.meta.env.VITE_API_URL+"/api/users/login",{
             email: email,
             password: password
         }).then(

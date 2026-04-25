@@ -23,24 +23,65 @@ export async function createProduct(req, res) {
 
 export async function getProducts(req, res) {
 	try {
-		if (isAdmin(req)) {
-			const products = await Product.find();
-			return res.json(products);
-		} else {
-			const products = await Product.find({ isAvailable: true });
-			return res.json(products);
+		// if (isAdmin(req)) {
+		// 	const products = await Product.find();
+		// 	return res.json(products);
+		// } else {
+		// 	const products = await Product.find({ isAvailable: true });
+		// 	return res.json(products);
+		// }
+
+		const { search, category, minPrice, maxPrice, sort } = req.query;
+		let filter = {};
+
+		//Search (by name)
+		if (search) {
+			filter.$or = [
+				{ name: { $regex: search, $options: "i" } },
+				{ altNames: { $elemMatch: { $regex: search, $options: "i" } } }
+			];
 		}
+
+		// Category filter
+		if (category && category !== "all") {
+			filter.category = category;
+		}
+
+		// Price filter
+		if (minPrice || maxPrice) {
+			filter.price = {};
+
+			if (minPrice && !isNaN(minPrice)) {
+				filter.price.$gte = Number(minPrice);
+			}
+			if (maxPrice && !isNaN(maxPrice)) {
+				filter.price.$lte = Number(maxPrice);
+			}
+
+			// Sorting
+			// let sortOption = {};
+			
+			// if (sort === "low"){
+			// 	sortOption.price = 1; // Ascending
+			// } else if (sort === "high"){
+			// 	sortOption.price = -1; // Descending
+			// }
+		}
+
+		const products = await Product.find(filter);
+		res.json(products);
+
 	} catch (error) {
-		console.error("Error fetching products:", error);
-		return res.status(500).json({ message: "Failed to fetch products" });
+		console.error("ERROR: ", error);
+		return res.status(500).json({ message: error.message });
 	}
 }
 
 export async function deleteProduct(req, res) {
-	if (!isAdmin(req)) {
-		res.status(403).json({ message: "Access denied. Admins only." });
-		return;
-	}
+	// if (!isAdmin(req)) {
+	// 	res.status(403).json({ message: "Access denied. Admins only." });
+	// 	return;
+	// }
 
 	try {
 		const productId = req.params.productId;
@@ -58,10 +99,10 @@ export async function deleteProduct(req, res) {
 }
 
 export async function updateProduct(req, res) {
-	if (!isAdmin(req)) {
-		res.status(403).json({ message: "Access denied. Admins only." });
-		return;
-	}
+	// if (!isAdmin(req)) {
+	// 	res.status(403).json({ message: "Access denied. Admins only." });
+	// 	return;
+	// }
 
 	const data = req.body;
 	const productId = req.params.productId;
@@ -125,9 +166,39 @@ export async function searchProducts(req,res){
 			isAvailable: true			
 		})
 		res.json(products);
-	}catch{
-		res.status(500).json({ message: "Failed to search products" });
+	} catch (error) {
+		res.status(500).json({ message: error.message });
 	}
 
 	//
+}
+
+export const getFilteredProducts = async (req, res) => {
+	try {
+		const { category, minPrice, maxPrice } = req.query;
+
+		let filter = {};
+
+		// Category filter
+		if (category && category !== "all") {
+			filter.category = category;
+		}
+
+		// Price filter
+		if (minPrice || maxPrice) {
+			filter.price = {};
+			if (minPrice) {
+				filter.price.$gte = Number(minPrice);
+			}
+			if (maxPrice) {
+				filter.price.$lte = Number(maxPrice);
+			}
+		}
+
+		const products = await Product.find(filter);
+		res.json(products);
+
+	} catch (error) {
+		res.status(500).json({ message: error.message });
+	}
 }

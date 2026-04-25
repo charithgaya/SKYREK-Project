@@ -5,18 +5,18 @@ import dotenv from "dotenv";
 import axios from "axios";
 import nodemailer from "nodemailer"
 import OTP from "../models/otp.js";
-const pw = "mdyjccbgjxwyvaup"
+// const pw = "mdyjccbgjxwyvaup"
 dotenv.config();
 
-const transporter = nodemailer.createTransport({
-	host: "smtp.gmail.com",
-	port: 587,
-	secure: false,
-	auth: {
-		user: "malithdilshan27@gmail.com",
-		pass: pw,
-	},
-});
+// const transporter = nodemailer.createTransport({
+// 	host: "smtp.gmail.com",
+// 	port: 587,
+// 	secure: false,
+// 	auth: {
+// 		user: "malithdilshan27@gmail.com",
+// 		pass: pw,
+// 	},
+// });
 
 export function createUser(req, res) {
 	const passwordHash = bcrypt.hashSync(req.body.password, 10);
@@ -26,19 +26,28 @@ export function createUser(req, res) {
 		lastName: req.body.lastName,
 		email: req.body.email,
 		password: passwordHash,
+        phone: req.body.phone,
 	};
 
-	const user = new User(userData);
+    // const existingUser = User.findOne({ email: req.body.email });
+    // if (existingUser) {
+    //     return res.status(400).json({
+    //         message: "Email already exists",
+    //     });
+    // }
 
-	user
+	const newUser = new User(userData);
+
+	newUser
 		.save()
 		.then(() => {
-			res.json({
+			res.status(201).json({
 				message: "User created successfully",
 			});
 		})
-		.catch(() => {
-			res.json({
+		.catch((err) => {
+            console.log("REGISTER ERROR: ", err);
+			res.status(500).json({
 				message: "Failed to create user",
 			});
 		});
