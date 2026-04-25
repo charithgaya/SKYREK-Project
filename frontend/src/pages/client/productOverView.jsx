@@ -15,7 +15,7 @@ export default function ProductOverViewPage() {
 		if (status === "loading") {
 			axios
 				.get(
-					import.meta.env.VITE_BACKEND_URL + `/api/products/${params.productId}`
+					import.meta.env.VITE_API_URL + `/api/products/${params.productId}`
 				)
 				.then((res) => {
 					setProduct(res.data);

@@ -11,7 +11,7 @@ export default function ImageSlider(props){
                     images.map(
                         (image, index)=>{
                             return(
-                                <img  src={image} key={index} className={"w-[90px] h-[90px] object-cover cursor-pointer "+(activeImageIndex == index && "border-[5px]")} 
+                                <img  src={image} key={index} className={"w-[90px] h-[90px] object-cover cursor-pointer "+(activeImageIndex == index && "border-[5px] border-pink-600")} 
                                 onClick={
                                     ()=>{
                                         setActiveImageIndex(index);

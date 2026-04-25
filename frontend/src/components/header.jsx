@@ -9,7 +9,7 @@ export default function Header() {
 	const [isOpen, setIsOpen] = useState(false);
 	const token = localStorage.getItem("token");
 	return (
-		<header className="h-[100px] bg-accent flex justify-center items-center relative">
+		<header className="h-[100px] bg-pink-500 flex justify-center items-center relative">
 			{isOpen && (
 				<div className="fixed z-[100] top-0 right-0 w-[100vw] h-[100vh] bg-[#00000050]">
 					<div className="h-full w-[350px] bg-white flex flex-col">
@@ -77,19 +77,19 @@ export default function Header() {
                 }
             }/>
 			<div className="hidden w-full md:flex justify-center items-center">
-				<Link to="/" className="text-white text-xl ">
+				<Link to="/" className="text-white text-xl hover:scale-105 ">
 					Home
 				</Link>
-				<Link to="/products" className="ml-4 text-white text-xl">
+				<Link to="/products" className="ml-4 text-white text-xl hover:scale-105">
 					Products
 				</Link>
-				<Link to="/reviews" className="ml-4 text-white text-xl">
+				<Link to="/reviews" className="ml-4 text-white text-xl hover:scale-105">
 					Reviews
 				</Link>
-				<Link to="/about-us" className="ml-4 text-white text-xl">
+				<Link to="/about-us" className="ml-4 text-white text-xl hover:scale-105">
 					About Us
 				</Link>
-				<Link to="/contact-us" className="ml-4 text-white text-xl">
+				<Link to="/contact-us" className="ml-4 text-white text-xl hover:scale-105">
 					Contact Us
 				</Link>
 				<Link to="/cart" className="absolute right-[250px] ">
