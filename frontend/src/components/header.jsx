@@ -9,7 +9,7 @@ export default function Header() {
 	const [isOpen, setIsOpen] = useState(false);
 	const token = localStorage.getItem("token");
 	return (
-		<header className="h-[100px] bg-pink-500 flex justify-center items-center relative">
+		<header className="h-[100px] bg-pink-600 flex justify-center items-center relative">
 			{isOpen && (
 				<div className="fixed z-[100] top-0 right-0 w-[100vw] h-[100vh] bg-[#00000050]">
 					<div className="h-full w-[350px] bg-white flex flex-col">
@@ -22,7 +22,7 @@ export default function Header() {
 								onClick={() => {
 									navigate("/");
 								}}
-								src="/newLogo.png"
+								src="/original-remove-bg.png"
 								alt="Logo"
 							/>
 						</div>
@@ -64,11 +64,11 @@ export default function Header() {
 				</div>
 			)}
 			<img
-				className="w-[150px] h-[80px] object-cover absolute md:left-[40px] cursor-pointer"
+				className="w-[355px] h-[100px] object-cover bg-[#FFFFFF] rounded-4xl absolute md:left-[50px] cursor-pointer"
 				onClick={() => {
 					navigate("/");
 				}}
-				src="/newLogo.png"
+				src="/original-remove-bg.png"
 				alt="Logo"
 			/>
 			<GiHamburgerMenu className="text-white text-4xl absolute md:hidden left-[40px]" onClick={
@@ -80,16 +80,16 @@ export default function Header() {
 				<Link to="/" className="text-white text-xl hover:scale-105 ">
 					Home
 				</Link>
-				<Link to="/products" className="ml-4 text-white text-xl hover:scale-105">
+				<Link to="/products" className="ml-6 text-white text-xl hover:scale-105">
 					Products
 				</Link>
-				<Link to="/reviews" className="ml-4 text-white text-xl hover:scale-105">
+				<Link to="/reviews" className="ml-6 text-white text-xl hover:scale-105">
 					Reviews
 				</Link>
-				<Link to="/about-us" className="ml-4 text-white text-xl hover:scale-105">
+				<Link to="/about-us" className="ml-6 text-white text-xl hover:scale-105">
 					About Us
 				</Link>
-				<Link to="/contact-us" className="ml-4 text-white text-xl hover:scale-105">
+				<Link to="/contact-us" className="ml-6 text-white text-xl hover:scale-105">
 					Contact Us
 				</Link>
 				<Link to="/cart" className="absolute right-[250px] ">

@@ -65,8 +65,14 @@ export default function LoginPage() {
     }
 
 	return (
-		<div className="w-full h-screen bg-[url(./wp2.jpg)] bg-cover bg-center flex justify-center items-center opacity-90">
+		<div className="w-full h-screen bg-[url(./wallpaper.jpg)] bg-cover bg-center flex justify-center items-center opacity-90">
+            <img
+                    className="w-[450px] h-[180px] object-cover absolute top-[5px] cursor-pointer"
+                    src="/original-remove-bg.png"
+                    alt="Logo"	
+                />	
 			<div className="w-[500px] h-[500px] backdrop-blur-sm shadow-2xl rounded-[30px] relative gap-[20px] text-pink-900 flex flex-col items-center justify-center">
+                 
 				<h1 className="absolute top-[20px] text-2xl font-bold text-center my-2">Login</h1>
                 <div className="w-[350px]  flex flex-col">
                     <span className="text-lg ">Email</span>
