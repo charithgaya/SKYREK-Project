@@ -15,18 +15,20 @@ function ReviewsPage() {
     ];
 
   return (
-    <div className='p-6 min-h-screen'>
-      <h1 className='text-2xl font-bold text-center text-pink-500 mb-4'>Customer Reviews</h1>
+    <div className='py-16 min-h-screen bg-gradient-to-r from-pink-200 via-pink-100 to-pink-50'>
+      <h1 className='text-3xl font-bold text-center text-pink-500 mb-4'>Customer Reviews</h1>
+      <div className='p-4'>
 
-      {reviews.map((r, i) => (
-        <div key={i} className='bg-[#FFFFF0] shadow-lg p-4 mb-3 rounded-lg'>
-            <h3 className='font-bold pb-2'>{r.name}</h3>
+        {reviews.map((r, i) => (
+        <div key={i} className='bg-[#FAF9F6] shadow-lg p-4 mb-4 rounded-xl max-w-[500px] h-25 mx-auto hover:scale-102'>
             <div className='flex justify-between'>
-              <p className='font-style: italic'>{r.comment}</p>
+              <h3 className='font-bold pb-2'>{r.name}</h3>
               <p>⭐ {r.rating}</p>
             </div>
+              <p className='text-sm md:text-base font-style: italic'>{r.comment}</p>
         </div>
-      ))}
+        ))}
+      </div>
     </div>
   );
 }

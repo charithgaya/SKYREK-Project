@@ -40,21 +40,40 @@ export default function RegisterPage(){
         }
     }
     return(
-        <div className="flex justify-center items-center h-screen">
-            <form
-                className="flex flex-col gap-4 w-[500px] h-[500px] border border-pink-500 p-2 rounded bg-[#FFFFF0]" 
-                onSubmit={handleSubmit}
-            >
-                <h2 className="font-semibold text-2xl text-center p-6">Register page</h2>
-                <input name="firstName" type="text" placeholder="First Name" onChange={handleChange} required className="border border-pink-400 p-2 rounded-lg" />
-                <input name="lastName" type="text" placeholder="Last Name" onChange={handleChange} required className="border border-pink-400 p-2 rounded-lg" />
-                <input name="email" type="email" placeholder="Email" onChange={handleChange} required className="border border-pink-400 p-2 rounded-lg" />
-                <input name="password" type="password" placeholder="Password" onChange={handleChange} className="border border-pink-400 p-2 rounded-lg" />
-                <input name="phone" placeholder="Phone" onChange={handleChange} className="border border-pink-400 p-2 rounded-lg" />
-                <button className='bg-pink-500 font-semibold hover:font-bold hover:bg-pink-600 border-none p-2 rounded-lg text-white cursor-pointer'>
+        <div className="w-full h-screen bg-[url(./wallpaper.jpg)] bg-cover bg-center flex justify-center items-center opacity-90">
+            <div className="w-[500px] h-[550px] backdrop-blur-sm shadow-2xl rounded-[30px] relative gap-[8px] text-pink-800 flex flex-col items-center justify-center">
+                
+                <h1 className="absolute top-[20px] text-2xl font-bold text-center my-1">Register</h1>
+
+                <div className="w-[350px] flex flex-col">
+                    <span className="text-lg ">First Name</span>   
+                    <input name="firstName" type="text" onChange={handleChange} required className="w-[350px] h-[40px] border border-pink-700 rounded-xl"/>  
+                </div>
+
+                <div className="w-[350px] flex flex-col">
+                    <span className="text-lg ">Last Name</span>
+                    <input name="lastName" type="text" onChange={handleChange} required className="w-[350px] h-[40px] border border-pink-700 rounded-xl"/>
+                </div>
+
+                <div className="w-[350px] flex flex-col">
+                    <span className="text-lg ">Email</span>
+                    <input name="email" type="email" onChange={handleChange} required className="w-[350px] h-[40px] border border-pink-700 rounded-xl"/>
+                </div>
+
+                <div className="w-[350px] flex flex-col">
+                    <span className="text-lg ">Password</span>
+                    <input name="password" type="password" onChange={handleChange} className="w-[350px] h-[40px] border border-pink-700 rounded-xl"/>
+                </div>
+
+                <div className="w-[350px] flex flex-col">
+                    <span className="text-lg ">Phone</span>
+                    <input name="phone" type="tel" onChange={handleChange} className="w-[350px] h-[40px] border border-pink-700 rounded-xl"/>
+                </div>
+
+                <button onClick={handleSubmit} className="w-[350px] h-[40px] font-semibold bg-pink-700 rounded-xl text-white text-lg mt-5 hover:scale-102 hover:bg-pink-600 transition-all duration-300">
                     Register
                 </button>
-            </form>
+            </div>
         </div>
     )
 }

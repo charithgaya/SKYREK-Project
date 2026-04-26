@@ -31,9 +31,9 @@ function ContactUs() {
 
   return (
     <div className='min-h-screen flex justify-center items-center p-4 bg-gradient-to-r from-pink-200 via-pink-100 to-pink-50'>
-      <div className='bg-[#FFFFF0] shadow-lg rounded-2xl p-8 w-full max-w-[500px]'>
+      <div className='bg-[#FAF9F6] shadow-lg rounded-2xl p-8 w-full max-w-[500px]'>
 
-        <h1 className='text-3xl font-bold text-center mb-6 text-pink-400'>
+        <h1 className='text-3xl font-bold text-center mb-6 text-pink-500'>
           Contact Us
         </h1>
 
@@ -66,9 +66,9 @@ function ContactUs() {
             />
 
             <button
-              className='bg-pink-500 font-semibold hover:font-bold hover:bg-pink-400 border-none p-2 rounded-lg text-white cursor-pointer'
+              className='bg-pink-500 font-semibold hover:font-bold hover:scale-102 border-none p-2 rounded-lg text-white cursor-pointer'
             >
-              Send Message<IoIosSend className='inline-block ml-2'/>
+              Send Message<IoIosSend className='inline-block ml-2 text-lg'/>
             </button>
         </form>
 
