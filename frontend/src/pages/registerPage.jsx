@@ -1,7 +1,9 @@
 import { useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 export default function RegisterPage(){
+    const navigate = useNavigate();
     const [formData, setFormData] = useState({
         firstName: "",
         lastName: "",
@@ -9,6 +11,7 @@ export default function RegisterPage(){
         password: "",
         phone: ""
     })
+
 
     const handleChange = (e) => {
         setFormData({
@@ -34,6 +37,8 @@ export default function RegisterPage(){
                 password: "",           
                 phone: ""
             });
+              navigate("/login");
+
 
         } catch (error) {
             alert(error.res?.data?.message || "Error occurred while registering.");

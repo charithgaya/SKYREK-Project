@@ -21,13 +21,14 @@ export default function AdminPage() {
                 toast.error("You are not logged in");
                 navigate("/login");
             }else{
-                axios.get(import.meta.env.VITE_BACKEND_URL+"/api/users/", {
+                axios.get(import.meta.env.VITE_API_URL+"/api/users/", {
                     headers: {
                         Authorization: `Bearer ${token}`,
                     },
                 }).then((response) => {
                     if (response.data.role == "admin") {
                         setAdminValidated(true);
+						navigate("/admin");
                     } else {
                         toast.error("You are not authorized");
                         navigate("/login");
@@ -38,7 +39,7 @@ export default function AdminPage() {
                 });
             }
         }
-    ,[]);
+    ,[navigate]);
 	return (
 		<div className="w-full h-screen  flex">
 			{adminValidated?<>
