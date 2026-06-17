@@ -67,14 +67,14 @@ export default function LoginPage() {
 	return (
 		<div className="w-full h-screen bg-[url(./wallpaper.jpg)] bg-cover bg-center flex justify-center items-center opacity-90">
             <img
-                    className="w-[450px] h-[180px] object-cover absolute top-[5px] cursor-pointer"
-                    src="/original-remove-bg.png"
-                    alt="Logo"	
-                />	
-			<div className="w-[500px] h-[500px] backdrop-blur-sm shadow-2xl rounded-[30px] relative gap-[20px] text-pink-900 flex flex-col items-center justify-center">
+                className="w-[400px] h-[120px] object-cover absolute top-[5px] cursor-pointer"
+                src="/original-remove-bg.png"
+                alt="Logo"	
+            />	
+			<div className="w-[500px] h-[500px] min-w-[300px] min-h-[300px] backdrop-blur-sm shadow-2xl rounded-[30px] relative gap-[20px] text-pink-900 flex flex-col items-center justify-center">
                  
 				<h1 className="absolute top-[20px] text-2xl font-bold text-center my-2">Login</h1>
-                <div className="w-[350px]  flex flex-col">
+                <div className="w-[350px] min-w-[250px] flex flex-col">
                     <span className="text-lg ">Email</span>
                     <input 
                         onChange={
@@ -82,22 +82,22 @@ export default function LoginPage() {
                                 setEmail(e.target.value)
                             }
                         }
-                    type="text" className="w-[350px] h-[40px] border border-pink-700 rounded-xl"/>
+                    type="text" className="w-[350px] h-[40px] p-2 border border-pink-700 rounded-xl"/>
                 </div>
-                <div className="w-[350px]  flex flex-col    ">
+                <div className="w-[350px] min-w-[250px] flex flex-col">
                     <span className="text-lg ">Password</span>
 
                     <input onChange={
                         (e)=>{
                             setPassword(e.target.value)
                         }
-                    } type="password" className="w-[350px] h-[40px] border border-pink-700 rounded-xl"/>
+                    } type="password" className="w-[350px] h-[40px] p-2 border border-pink-700 rounded-xl"/>
 
                 </div>
-                <button onClick={login} className="w-[350px] h-[40px] font-semibold bg-pink-700 rounded-xl text-white text-lg mt-5 hover:scale-102 hover:bg-pink-600 transition-all duration-300">
+                <button onClick={login} className="w-[350px] h-[40px] min-w-[250px] font-semibold bg-pink-700 rounded-xl text-white text-lg mt-5 hover:scale-102 hover:bg-pink-600 transition-all duration-300">
                     Login
                 </button>
-                <button onClick={googleLogin} className="w-[350px] h-[40px] font-semibold bg-pink-700 rounded-xl text-white text-lg mt-2 hover:scale-102 hover:bg-pink-600 transition-all duration-300">
+                <button onClick={googleLogin} className="w-[350px] h-[40px] min-w-[250px] font-semibold bg-pink-700 rounded-xl text-white text-lg mt-1 hover:scale-102 hover:bg-pink-600 transition-all duration-300">
                     <FaGoogle className="inline mr-2 text-lg p-0.6" />
                     Login via Google
                 </button>

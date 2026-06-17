@@ -24,21 +24,21 @@ export default function ProductsAdminPage() {
 	const navigate = useNavigate();
 
 	return (
-		<div className="w-full h-full border-[3px]">
+		<div className="w-full h-full p-8 flex flex-col justify-between">
 			{isLoading ? (
 				<Loader/>
 			) : (
-				<table>
-					<thead>
+				<table className="w-full border-collapse border-[2px] border-pink-600">
+					<thead className="border-pink-600 border-[2px]">
 						<tr>
-							<th className="p-[10px]">Image</th>
-							<th className="p-[10px]">Product ID</th>
-							<th className="p-[10px]">Name</th>
-							<th className="p-[10px]">Price</th>
-							<th className="p-[10px]">Labelled Price</th>
-							<th className="p-[10px]">Category</th>
-							<th className="p-[10px]">Stock</th>
-							<th className="p-[10px]">Actions</th>
+							<th className="p-[10px] text-pink-900">Image</th>
+							<th className="p-[10px] text-pink-900">Product ID</th>
+							<th className="p-[10px] text-pink-900">Name</th>
+							<th className="p-[10px] text-pink-900">Price</th>
+							<th className="p-[10px] text-pink-900">Labelled Price</th>
+							<th className="p-[10px] text-pink-900">Category</th>
+							<th className="p-[10px] text-pink-900">Stock</th>
+							<th className="p-[10px] text-pink-900">Actions</th>
 						</tr>
 					</thead>
 
@@ -46,19 +46,19 @@ export default function ProductsAdminPage() {
 						{products.map((product, index) => {
 							return (
 								<tr key={index}>
-									<td>
+									<td className="p-[10px] flex flex-row justify-center items-center">
 										<img
 											src={product.images[0]}
 											alt={product.name}
 											className="w-[50px] h-[50px]"
 										/>
 									</td>
-									<td className="p-[10px]">{product.productId}</td>
-									<td className="p-[10px]">{product.name}</td>
-									<td className="p-[10px]">{product.price}</td>
-									<td className="p-[10px]">{product.labelledPrice}</td>
-									<td className="p-[10px]">{product.category}</td>
-									<td className="p-[10px]">{product.stock}</td>
+									<td className="p-[10px] text-center font-semibold">{product.productId}</td>
+									<td className="p-[10px] text-center font-semibold">{product.name}</td>
+									<td className="p-[10px] text-center font-semibold">LKR {product.price}</td>
+									<td className="p-[10px] text-center font-semibold">LKR {product.labelledPrice}</td>
+									<td className="p-[10px] text-center font-semibold">{product.category}</td>
+									<td className="p-[10px] text-center font-semibold">{product.stock}</td>
 									<td className="p-[10px] flex flex-row justify-center items-center">
 										<BiTrash
 											className="bg-red-500 p-[7px] text-3xl rounded-full text-white shadow-2xl shadow-black cursor-pointer"
@@ -98,7 +98,7 @@ export default function ProductsAdminPage() {
 													state: product,
 												});
 											}}
-											className="bg-blue-500 p-[7px] text-3xl rounded-full text-white shadow-2xl shadow-black cursor-pointer ml-[10px]"
+											className="bg-pink-500 p-[7px] text-3xl rounded-full text-white shadow-2xl shadow-black cursor-pointer ml-[10px]"
 										/>
 									</td>
 								</tr>
@@ -109,7 +109,7 @@ export default function ProductsAdminPage() {
 			)}
 			<Link
 				to={"/admin/newProduct"}
-				className="fixed right-[60px] bottom-[60px] p-[20px] text-white bg-black rounded-full shadow-2xl"
+				className="fixed right-[60px] bottom-[60px] p-[20px] text-white bg-pink-700 rounded-full shadow-2xl"
 			>
 				<BiPlus className="text-3xl" />
 			</Link>

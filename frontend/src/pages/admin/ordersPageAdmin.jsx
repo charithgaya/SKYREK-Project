@@ -43,18 +43,18 @@ export default function OrdersPageAdmin() {
 	}, [loading, page, limit]);
 
 	return (
-		<div className="w-full h-full flex flex-col justify-between">
-			<table className="w-full border-[3px]">
-				<thead>
+		<div className="w-full h-full p-8 flex flex-col justify-between">
+			<table className="w-full border-collapse border-[2px] border-pink-600">
+				<thead className="border-pink-600 border-[2px]">
 					<tr>
-						<th className="p-[10px]">Order ID</th>
-						<th className="p-[10px]">email</th>
-						<th className="p-[10px]">name</th>
-						<th className="p-[10px]">Address</th>
-						<th className="p-[10px]">Phone</th>
-						<th className="p-[10px]">Status</th>
-						<th className="p-[10px]">Date</th>
-						<th className="p-[10px]">Total</th>
+						<th className="p-[10px] text-pink-900">Order ID</th>
+						<th className="p-[10px] text-pink-900">email</th>
+						<th className="p-[10px] text-pink-900">name</th>
+						<th className="p-[10px] text-pink-900">Address</th>
+						<th className="p-[10px] text-pink-900">Phone</th>
+						<th className="p-[10px] text-pink-900">Status</th>
+						<th className="p-[10px] text-pink-900">Date</th>
+						<th className="p-[10px] text-pink-900">Total</th>
 					</tr>
 				</thead>
 				<tbody>

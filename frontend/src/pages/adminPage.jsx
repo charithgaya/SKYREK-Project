@@ -53,40 +53,40 @@ export default function AdminPage() {
 	};
 
 	return (
-		<div className="w-full h-screen  flex">
+		<div className="w-full h-screen flex">
 			{adminValidated?<>
 				<div className="w-[300px] h-full flex flex-col items-center">
-					<span className="text-3xl font-bold my-5">Admin Panel</span>
+					<span className="text-3xl text-pink-700 font-bold my-5">Admin Panel</span>
 
 					<Link
-						className="flex flex-row h-[60px] w-full  border p-[20px] items-center text-xl  gap-[25px]"
+						className="flex flex-row h-[60px] w-full p-[20px] items-center text-xl text-pink-900 gap-[25px]"
 						to="/admin"
 					>
-						<FaTachometerAlt /> Dashboard
+						<FaTachometerAlt className="text-pink-700" /> Dashboard
 					</Link>
 					<Link
-						className="flex flex-row h-[60px] w-full  border p-[20px] items-center text-xl  gap-[25px]"
+						className="flex flex-row h-[60px] w-full p-[20px] items-center text-xl text-pink-900 gap-[25px]"
 						to="/admin/products"
 					>
-						<FaBoxArchive /> Products
+						<FaBoxArchive className="text-pink-700" /> Products
 					</Link>
 					<Link
-						className="flex flex-row h-[60px] w-full border p-[20px] items-center text-xl  gap-[25px]"
+						className="flex flex-row h-[60px] w-full p-[20px] items-center text-xl text-pink-900 gap-[25px]"
 						to="/admin/orders"
 					>
-						<GiShoppingBag /> Orders
+						<GiShoppingBag className="text-pink-700" /> Orders
 					</Link>
 					<Link
-						className="flex flex-row h-[60px] w-full border p-[20px] items-center text-xl  gap-[25px]"
+						className="flex flex-row h-[60px] w-full p-[20px] items-center text-xl text-pink-900 gap-[25px]"
 						to="/admin/users"
 					>
-						<IoPeople /> Users
+						<IoPeople className="text-pink-700" /> Users
 					</Link>
 					<Link
-						className="flex flex-row h-[60px] w-full border p-[20px] items-center text-xl  gap-[25px]"
+						className="flex flex-row h-[60px] w-full p-[20px] items-center text-xl text-pink-900 gap-[25px]"
 						to="/admin/settings"
 					>
-						<IoSettings /> Settings
+						<IoSettings className="text-pink-700" /> Settings
 					</Link>
 					
 					<div className="mt-auto w-full p-5 border-t border-pink-100 bg-pink-50/30 flex flex-col items-center gap-3">

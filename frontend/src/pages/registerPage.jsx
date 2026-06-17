@@ -1,6 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function RegisterPage(){
     const navigate = useNavigate();
@@ -46,38 +46,45 @@ export default function RegisterPage(){
     }
     return(
         <div className="w-full h-screen bg-[url(./wallpaper.jpg)] bg-cover bg-center flex justify-center items-center opacity-90">
-            <div className="w-[500px] h-[550px] backdrop-blur-sm shadow-2xl rounded-[30px] relative gap-[8px] text-pink-800 flex flex-col items-center justify-center">
+            <img
+                className="w-[400px] h-[120px] object-cover absolute top-[5px] cursor-pointer"
+                src="/original-remove-bg.png"
+                alt="Logo"	
+            />	
+            <div className="w-[500px] h-[600px] backdrop-blur-sm shadow-2xl rounded-[30px] relative gap-[8px] text-pink-900 flex flex-col items-center justify-center">
                 
                 <h1 className="absolute top-[20px] text-2xl font-bold text-center my-1">Register</h1>
 
-                <div className="w-[350px] flex flex-col">
+                <div className="w-[350px] min-w-[250px] flex flex-col">
                     <span className="text-lg ">First Name</span>   
-                    <input name="firstName" type="text" onChange={handleChange} required className="w-[350px] h-[40px] border border-pink-700 rounded-xl"/>  
+                    <input name="firstName" type="text" onChange={handleChange} required className="w-[350px] h-[40px] p-2 border border-pink-700 rounded-xl"/>  
                 </div>
 
-                <div className="w-[350px] flex flex-col">
+                <div className="w-[350px] min-w-[250px] flex flex-col">
                     <span className="text-lg ">Last Name</span>
-                    <input name="lastName" type="text" onChange={handleChange} required className="w-[350px] h-[40px] border border-pink-700 rounded-xl"/>
+                    <input name="lastName" type="text" onChange={handleChange} required className="w-[350px] h-[40px] p-2 border border-pink-700 rounded-xl"/>
                 </div>
 
-                <div className="w-[350px] flex flex-col">
+                <div className="w-[350px] min-w-[250px] flex flex-col">
                     <span className="text-lg ">Email</span>
-                    <input name="email" type="email" onChange={handleChange} required className="w-[350px] h-[40px] border border-pink-700 rounded-xl"/>
+                    <input name="email" type="email" onChange={handleChange} required className="w-[350px] h-[40px] p-2 border border-pink-700 rounded-xl"/>
                 </div>
 
-                <div className="w-[350px] flex flex-col">
+                <div className="w-[350px] min-w-[250px] flex flex-col">
                     <span className="text-lg ">Password</span>
-                    <input name="password" type="password" onChange={handleChange} className="w-[350px] h-[40px] border border-pink-700 rounded-xl"/>
+                    <input name="password" type="password" onChange={handleChange} className="w-[350px] h-[40px] p-2 border border-pink-700 rounded-xl"/>
                 </div>
 
-                <div className="w-[350px] flex flex-col">
+                <div className="w-[350px] min-w-[250px] flex flex-col">
                     <span className="text-lg ">Phone</span>
-                    <input name="phone" type="tel" onChange={handleChange} className="w-[350px] h-[40px] border border-pink-700 rounded-xl"/>
+                    <input name="phone" type="tel" onChange={handleChange} className="w-[350px] h-[40px] p-2 border border-pink-700 rounded-xl"/>
                 </div>
 
-                <button onClick={handleSubmit} className="w-[350px] h-[40px] font-semibold bg-pink-700 rounded-xl text-white text-lg mt-5 hover:scale-102 hover:bg-pink-600 transition-all duration-300">
+                <button onClick={handleSubmit} className="w-[350px] min-w-[250px] h-[40px] font-semibold bg-pink-700 rounded-xl text-white text-lg mt-5 hover:scale-102 hover:bg-pink-600 transition-all duration-300">
                     Register
                 </button>
+
+                <p>Already have an account? <Link to="/login" className="text-pink-500 hover:text-pink-600">Login</Link> from here</p>
             </div>
         </div>
     )
