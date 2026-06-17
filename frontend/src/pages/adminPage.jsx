@@ -3,7 +3,9 @@ import { FaBoxArchive } from "react-icons/fa6";
 import { GiShoppingBag } from "react-icons/gi";
 import { IoPeople } from "react-icons/io5";
 import { IoSettings } from "react-icons/io5";
+import { FaTachometerAlt } from "react-icons/fa";
 import ProductsAdminPage from "./admin/productsAdminPage";
+import DashboardAdminPage from "./admin/dashboardAdminPage";
 import AddProductPage from "./admin/addProductAdminPage";
 import UpdateProductPage from "./admin/updateProduct";
 import OrdersPageAdmin from "./admin/ordersPageAdmin";
@@ -48,6 +50,12 @@ export default function AdminPage() {
 
 					<Link
 						className="flex flex-row h-[60px] w-full  border p-[20px] items-center text-xl  gap-[25px]"
+						to="/admin"
+					>
+						<FaTachometerAlt /> Dashboard
+					</Link>
+					<Link
+						className="flex flex-row h-[60px] w-full  border p-[20px] items-center text-xl  gap-[25px]"
 						to="/admin/products"
 					>
 						<FaBoxArchive /> Products
@@ -73,7 +81,7 @@ export default function AdminPage() {
 				</div>
 				<div className="w-[calc(100%-300px)]  h-full">
 					<Routes path="/*">
-						<Route path="/" element={<h1>Dashboard</h1>} />
+						<Route path="/" element={<DashboardAdminPage />} />
 						<Route path="/products" element={<ProductsAdminPage />} />
 						<Route path="/newProduct" element={<AddProductPage />} />
 						<Route path="/orders" element={<OrdersPageAdmin />} />

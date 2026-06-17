@@ -253,3 +253,17 @@ export async function resetPassword(req,res){
         res.status(500).json({ message: "Failed to reset password" });
     }
 }
+
+export async function getAllUsers(req, res) {
+	if (!isAdmin(req)) {
+		return res.status(403).json({ message: "Access denied. Admins only." });
+	}
+	
+	try {
+		const users = await User.find();
+		res.json(users);
+	} catch (error) {
+		console.error("Error fetching all users:", error);
+		res.status(500).json({ message: "Failed to fetch users" });
+	}
+}
