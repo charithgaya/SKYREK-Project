@@ -25,7 +25,7 @@ export default function DashboardAdminPage() {
 
 		Promise.all([
 			axios.get(`${apiUrl}/api/products`),
-			axios.get(`${apiUrl}/api/orders`, { headers }),
+			axios.get(`${apiUrl}/api/orders/1/1000`, { headers }),
 			axios.get(`${apiUrl}/api/users/all`, { headers }),
 		])
 			.then(([productsRes, ordersRes, usersRes]) => {

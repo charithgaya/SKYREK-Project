@@ -267,3 +267,40 @@ export async function getAllUsers(req, res) {
 		res.status(500).json({ message: "Failed to fetch users" });
 	}
 }
+
+export async function updateProfile(req, res) {
+	if (req.user == null) {
+		return res.status(401).json({ message: "Unauthorized" });
+	}
+	const { firstName, lastName, phone, image } = req.body;
+	
+	try {
+		const updatedUser = await User.findOneAndUpdate(
+			{ email: req.user.email },
+			{ firstName, lastName, phone, image },
+			{ new: true }
+		);
+
+		if (!updatedUser) {
+			return res.status(404).json({ message: "User not found" });
+		}
+
+		const token = jwt.sign(
+			{
+				email: updatedUser.email,
+				firstName: updatedUser.firstName,
+				lastName: updatedUser.lastName,
+				role: updatedUser.role,
+				isBlocked: updatedUser.isBlocked,
+				isEmailVerified: updatedUser.isEmailVerified,
+				image: updatedUser.image,
+			},
+			process.env.JWT_SECRET
+		);
+
+		res.json({ message: "Profile updated successfully", token, user: updatedUser });
+	} catch (err) {
+		console.error("Error updating profile:", err);
+		res.status(500).json({ message: "Failed to update profile" });
+	}
+}
