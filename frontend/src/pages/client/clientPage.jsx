@@ -1,5 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import Header from "../../components/header";
+import Footer from "../../components/footer";
 import ProductsPage from "./productsPage";
 import ProductOverViewPage from "./productOverView";
 import CartPage from "./cart";
@@ -51,6 +52,7 @@ export default function ClientWebPage() {
 						element={<h1 className="text-3xl text-center">404 Not Found</h1>}
 					/>
 				</Routes>
+				<Footer />
 			</div>
 		</div>
 	);

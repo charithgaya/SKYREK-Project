@@ -42,7 +42,7 @@ export default function ProductsPage() {
 	}, [query, category, minPrice, maxPrice /*, sort*/]);
 
 	return (
-		<div className="w-full h-full">
+		<div className="">
 			<div className="flex gap-4 justify-center items-center p-4">
 				{/* Search */}
                 <input

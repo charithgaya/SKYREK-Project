@@ -80,103 +80,103 @@ export default function AddProductPage() {
 
 	return (
 		<div className="w-full h-full flex justify-center items-center">
-			<div className="w-[600px] border-[3px] rounded-[15px] p-[40px] flex flex-wrap justify-between">
+			<div className="w-[600px] border border-pink-100 rounded-2xl shadow-lg p-[40px] flex flex-wrap justify-between bg-white">
 				<div className="w-[200px] flex flex-col gap-[5px]">
-					<label className="text-sm font-semibold">Product ID</label>
+					<label className="text-sm font-semibold text-pink-900">Product ID</label>
 					<input
 						type="text"
 						value={productId}
 						onChange={(e) => {
 							setProductId(e.target.value);
 						}}
-						className="w-full border-[1px] h-[40px] rounded-md"
+						className="w-full p-2 border border-pink-200 h-[40px] rounded-md focus:outline-none focus:ring-2 focus:ring-pink-500 transition"
 					/>
 				</div>
 				<div className="w-[300px] flex flex-col gap-[5px]">
-					<label className="text-sm font-semibold">Product Name</label>
+					<label className="text-sm font-semibold text-pink-900">Product Name</label>
 					<input
 						type="text"
 						value={productName}
 						onChange={(e) => setProductName(e.target.value)}
-						className="w-full border-[1px] h-[40px] rounded-md"
+						className="w-full p-2 border border-pink-200 h-[40px] rounded-md focus:outline-none focus:ring-2 focus:ring-pink-500 transition"
 					/>
 				</div>
 				<div className="w-[500px] flex flex-col gap-[5px]">
-					<label className="text-sm font-semibold">Alternative Names</label>
+					<label className="text-sm font-semibold text-pink-900">Alternative Names</label>
 					<input
 						type="text"
 						value={alternativeNames}
 						onChange={(e) => setAlternativeNames(e.target.value)}
-						className="w-full border-[1px] h-[40px] rounded-md"
+						className="w-full p-2 border border-pink-200 h-[40px] rounded-md focus:outline-none focus:ring-2 focus:ring-pink-500 transition"
 					/>
 				</div>
 				<div className="w-[200px] flex flex-col gap-[5px]">
-					<label className="text-sm font-semibold">Labelled Price</label>
+					<label className="text-sm font-semibold text-pink-900">Labelled Price</label>
 					<input
 						type="number"
 						value={labelledPrice}
 						onChange={(e) => setLabelledPrice(e.target.value)}
-						className="w-full border-[1px] h-[40px] rounded-md"
+						className="w-full p-2 border border-pink-200 h-[40px] rounded-md focus:outline-none focus:ring-2 focus:ring-pink-500 transition"
 					/>
 				</div>
 				<div className="w-[200px] flex flex-col gap-[5px]">
-					<label className="text-sm font-semibold">Price</label>
+					<label className="text-sm font-semibold text-pink-900">Price</label>
 					<input
 						type="number"
 						value={price}
 						onChange={(e) => setPrice(e.target.value)}
-						className="w-full border-[1px] h-[40px] rounded-md"
+						className="w-full p-2 border border-pink-200 h-[40px] rounded-md focus:outline-none focus:ring-2 focus:ring-pink-500 transition"
 					/>
 				</div>
 				<div className="w-[500px] flex flex-col gap-[5px]">
-					<label className="text-sm font-semibold">Images</label>
+					<label className="text-sm font-semibold text-pink-900">Images</label>
 					<input
 						multiple
 						type="file"
 						onChange={(e) => {
 							setImages(e.target.files);
 						}}
-						className="w-full border-[1px] h-[40px] rounded-md"
+						className="w-full p-2 border border-pink-200 h-[40px] rounded-md focus:outline-none focus:ring-2 focus:ring-pink-500 transition"
 					/>
 				</div>
 				<div className="w-[500px] flex flex-col gap-[5px]">
-					<label className="text-sm font-semibold">Description</label>
+					<label className="text-sm font-semibold text-pink-900">Description</label>
 					<textarea
 						value={description}
 						onChange={(e) => setDescription(e.target.value)}
-						className="w-full border-[1px] h-[100px] rounded-md"
+						className="w-full p-2 border border-pink-200 h-[100px] rounded-md focus:outline-none focus:ring-2 focus:ring-pink-500 transition"
 					></textarea>
 				</div>
 				<div className="w-[200px] flex flex-col gap-[5px]">
-					<label className="text-sm font-semibold">Stock</label>
+					<label className="text-sm font-semibold text-pink-900">Stock</label>
 					<input
 						type="number"
 						value={stock}
 						onChange={(e) => setStock(e.target.value)}
-						className="w-full border-[1px] h-[40px] rounded-md"
+						className="w-full p-2 border border-pink-200 h-[40px] rounded-md focus:outline-none focus:ring-2 focus:ring-pink-500 transition"
 					/>
 				</div>
 				<div className="w-[200px] flex flex-col gap-[5px]">
-					<label className="text-sm font-semibold">Is Available</label>
+					<label className="text-sm font-semibold text-pink-900">Is Available</label>
 					<select
 						value={isAvailable}
 						onChange={(e) => {
 							setIsAvailable(e.target.value === "true");
 						}}
-						className="w-full border-[1px] h-[40px] rounded-md"
+						className="w-full p-2 border border-pink-200 h-[40px] rounded-md focus:outline-none focus:ring-2 focus:ring-pink-500 transition"
 					>
 						<option value={true}>Available</option>
 						<option value={false}>Not Available</option>
 					</select>
 				</div>
 				<div className="w-[200px] flex flex-col gap-[5px]">
-					<label className="text-sm font-semibold">Category</label>
+					<label className="text-sm font-semibold text-pink-900">Category</label>
 					<select
 						value={category}
 						onChange={(e) => {
 							setCategory(e.target.value);
 						}}
-						className="w-full border-[1px] h-[40px] rounded-md"
+						className="w-full p-2 border border-pink-200 h-[40px] rounded-md focus:outline-none focus:ring-2 focus:ring-pink-500 transition"
 					>
 						<option value="cream">Cream</option>
 						<option value="face wash">Face Wash</option>
@@ -187,11 +187,11 @@ export default function AddProductPage() {
 				<div className="w-full flex justify-center flex-row py-[20px]">
 					<Link
 						to={"/admin/products"}
-						className="w-[200px] h-[50px] bg-white text-black border-[2px] rounded-md flex justify-center items-center"
+						className="w-[200px] h-[50px] bg-white text-black border border-pink-200 rounded-md flex justify-center items-center"
 					>
 						Cancel
 					</Link>
-					<button onClick={handleSubmit} className="w-[200px] h-[50px] bg-black text-white border-[2px] rounded-md flex justify-center items-center ml-[20px]">
+					<button onClick={handleSubmit} className="w-[200px] h-[50px] bg-pink-100 text-pink-700 rounded-md flex justify-center items-center ml-[20px]">
 						Add Product
 					</button>
 				</div>

@@ -68,7 +68,10 @@ function AboutUs() {
           </h2>
           <p className='text-gray-600 mb-6 text-lg'>Our team is here to help you anytime.</p>
 
-          <button className='bg-pink-500 hover:bg-pink-600 text-white font-semibold py-3 px-6 rounded-xl transition'>
+          <button 
+            onClick={() => window.location.href = '/contact-us'} 
+            className='bg-pink-500 hover:bg-pink-600 text-white font-semibold py-3 px-6 rounded-xl transition'
+          >
             Contact Us
           </button>
         </div>

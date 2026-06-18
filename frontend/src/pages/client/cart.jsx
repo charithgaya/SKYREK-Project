@@ -8,6 +8,7 @@ export default function CartPage() {
 	const navigate = useNavigate();
 	console.log(cart);
 	return (
+		
 		<div className="w-[100vw] max-w-[100vw] h-screen flex flex-col px-[10px] py-[40px] items-center">
 			{cart.map((item) => {
 				return (
